@@ -4,9 +4,6 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import me.fit.exception.RadniNalogException;
-import me.fit.model.RadniNalog;
-import me.fit.service.RadniNalogService;
 import java.util.List;
 
 @Path("/radniNalog")

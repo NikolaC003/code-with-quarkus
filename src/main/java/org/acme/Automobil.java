@@ -25,33 +25,58 @@ public class Automobil {
     @Column(name = "klijent_id")
     private Long klijentId;
 
-    // Tačka 1: Prva @OneToOne relacija
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "servisni_karton_id")
     private ServisniKarton servisniKarton;
-
-    // Tačka 1: Druga @OneToOne relacija
+ 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "radni_nalog_id")
     private RadniNalog radniNalog;
 
     public Automobil() {}
 
-    // Getteri i Setteri
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public int getGodinaProizvodnje() { return godinaProizvodnje; }
-    public void setGodinaProizvodnje(int godinaProizvodnje) { this.godinaProizvodnje = godinaProizvodnje; }
-    public String getBrojSasije() { return brojSasije; }
-    public void setBrojSasije(String brojSasije) { this.brojSasije = brojSasije; }
-    public String getRegistracija() { return registracija; }
-    public void setRegistracija(String registracija) { this.registracija = registracija; }
-    public Long getKlijentId() { return klijentId; }
-    public void setKlijentId(Long klijentId) { this.klijentId = klijentId; }
-    public ServisniKarton getServisniKarton() { return servisniKarton; }
-    public void setServisniKarton(ServisniKarton servisniKarton) { this.servisniKarton = servisniKarton; }
-    public RadniNalog getRadniNalog() { return radniNalog; }
-    public void setRadniNalog(RadniNalog radniNalog) { this.radniNalog = radniNalog; }
+    public Long getId() { 
+        return id; 
+        }
+    public void setId(Long id) { 
+        this.id = id; 
+        }
+    public int getGodinaProizvodnje() { 
+        return godinaProizvodnje; 
+        }
+    public void setGodinaProizvodnje(int godinaProizvodnje) { 
+        this.godinaProizvodnje = godinaProizvodnje; 
+        }
+    public String getBrojSasije() { 
+        return brojSasije; 
+        }
+    public void setBrojSasije(String brojSasije) { 
+        this.brojSasije = brojSasije; 
+        }
+    public String getRegistracija() { 
+        return registracija; 
+        }
+    public void setRegistracija(String registracija) { 
+        this.registracija = registracija; 
+        }
+    public Long getKlijentId() { 
+        return klijentId; 
+        }
+    public void setKlijentId(Long klijentId) { 
+        this.klijentId = klijentId; 
+        }
+    public ServisniKarton getServisniKarton() { 
+        return servisniKarton; 
+        }
+    public void setServisniKarton(ServisniKarton servisniKarton) { 
+        this.servisniKarton = servisniKarton; 
+        }
+    public RadniNalog getRadniNalog() { 
+        return radniNalog; 
+        }
+    public void setRadniNalog(RadniNalog radniNalog) { 
+        this.radniNalog = radniNalog; 
+        }
 
     @Override
     public boolean equals(Object o) {

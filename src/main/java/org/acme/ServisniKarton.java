@@ -29,14 +29,30 @@ public class ServisniKarton implements Serializable {
         this.datumOtvaranja = datumOtvaranja;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getOpisKvara() { return opisKvara; }
-    public void setOpisKvara(String opisKvara) { this.opisKvara = opisKvara; }
-    public String getDatumOtvaranja() { return datumOtvaranja; }
-    public void setDatumOtvaranja(String datumOtvaranja) { this.datumOtvaranja = datumOtvaranja; }
-    public String getNapomena() { return napomena; }
-    public void setNapomena(String napomena) { this.napomena = napomena; }
+    public Long getId() { 
+        return id; 
+        }
+    public void setId(Long id) { 
+        this.id = id; 
+        }
+    public String getOpisKvara() { 
+        return opisKvara; 
+        }
+    public void setOpisKvara(String opisKvara) { 
+        this.opisKvara = opisKvara; 
+        }
+    public String getDatumOtvaranja() { 
+        return datumOtvaranja; 
+        }
+    public void setDatumOtvaranja(String datumOtvaranja) { 
+        this.datumOtvaranja = datumOtvaranja; 
+        }
+    public String getNapomena() { 
+        return napomena; 
+        }
+    public void setNapomena(String napomena) { 
+        this.napomena = napomena; 
+        }
 
     @Override
     public boolean equals(Object o) {

@@ -4,10 +4,6 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import me.fit.exception.MehanicarException;
-import me.fit.model.Mehanicar;
-import me.fit.model.RadniNalog;
-import me.fit.service.MehanicarService;
 import java.util.List;
 
 @Path("/mehanicar")

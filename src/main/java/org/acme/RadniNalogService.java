@@ -5,8 +5,6 @@ import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import me.fit.exception.RadniNalogException;
-import me.fit.model.RadniNalog;
 import java.util.List;
 
 @Dependent

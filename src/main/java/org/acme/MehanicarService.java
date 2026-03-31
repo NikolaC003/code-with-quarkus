@@ -4,9 +4,6 @@ import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import me.fit.exception.MehanicarException;
-import me.fit.model.Mehanicar;
-import me.fit.model.RadniNalog;
 import java.util.List;
 
 @Dependent
@@ -35,7 +32,6 @@ public class MehanicarService {
     }
 
     public List<RadniNalog> getNaloziByMehanicarId(Long id) {
-        // Koristimo NamedQuery iz klase RadniNalog
         return em.createNamedQuery(RadniNalog.GET_ALL_NALOZI_FOR_MEHANICAR_ID, RadniNalog.class)
                  .setParameter("id", id)
                  .getResultList();

@@ -31,16 +31,36 @@ public class Mehanicar {
     @JoinColumn(name = "mehanicar_id")
     private List<RadniNalog> nalozi = new ArrayList<>();
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getIme() { return ime; }
-    public void setIme(String ime) { this.ime = ime; }
-    public String getPrezime() { return prezime; }
-    public void setPrezime(String prezime) { this.prezime = prezime; }
-    public String getSpecijalnost() { return specijalnost; }
-    public void setSpecijalnost(String specijalnost) { this.specijalnost = specijalnost; }
-    public List<RadniNalog> getNalozi() { return nalozi; }
-    public void setNalozi(List<RadniNalog> nalozi) { this.nalozi = nalozi; }
+    public Long getId() { 
+        return id; 
+        }
+    public void setId(Long id) { 
+        this.id = id; 
+        }
+    public String getIme() { 
+        return ime; 
+        }
+    public void setIme(String ime) { 
+        this.ime = ime; 
+        }
+    public String getPrezime() { 
+        return prezime; 
+        }
+    public void setPrezime(String prezime) { 
+        this.prezime = prezime; 
+        }
+    public String getSpecijalnost() { 
+        return specijalnost; 
+        }
+    public void setSpecijalnost(String specijalnost) { 
+        this.specijalnost = specijalnost; 
+        }
+    public List<RadniNalog> getNalozi() { 
+        return nalozi; 
+        }
+    public void setNalozi(List<RadniNalog> nalozi) { 
+        this.nalozi = nalozi; 
+        }
 
     @Override
     public boolean equals(Object o) {

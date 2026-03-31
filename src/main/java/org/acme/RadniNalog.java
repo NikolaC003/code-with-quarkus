@@ -35,17 +35,36 @@ public class RadniNalog implements Serializable {
         this.status = status;
     }
 
-    // Getteri i Setteri
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getBrojNaloga() { return brojNaloga; }
-    public void setBrojNaloga(String brojNaloga) { this.brojNaloga = brojNaloga; }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-    public double getCijenaRada() { return cijenaRada; }
-    public void setCijenaRada(double cijenaRada) { this.cijenaRada = cijenaRada; }
-    public Long getMehanicarId() { return mehanicarId; }
-    public void setMehanicarId(Long mehanicarId) { this.mehanicarId = mehanicarId; }
+    public Long getId() { 
+        return id; 
+        }
+    public void setId(Long id) { 
+        this.id = id; 
+        }
+    public String getBrojNaloga() { 
+        return brojNaloga; 
+        }
+    public void setBrojNaloga(String brojNaloga) { 
+        this.brojNaloga = brojNaloga; 
+        }
+    public String getStatus() { 
+        return status; 
+        }
+    public void setStatus(String status) { 
+        this.status = status; 
+        }
+    public double getCijenaRada() { 
+        return cijenaRada; 
+        }
+    public void setCijenaRada(double cijenaRada) { 
+        this.cijenaRada = cijenaRada; 
+        }
+    public Long getMehanicarId() { 
+        return mehanicarId; 
+        }
+    public void setMehanicarId(Long mehanicarId) { 
+        this.mehanicarId = mehanicarId; 
+        }
 
     @Override
     public boolean equals(Object o) {

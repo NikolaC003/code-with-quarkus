@@ -1,43 +1,34 @@
 package org.acme;
 
 
+import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import me.fit.exception.ServisniKartonException;
-import me.fit.model.ServisniKarton;
-import me.fit.service.ServisniKartonService;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import java.util.List;
 
-@Path("/servisniKarton")
-public class ServisniKartonResource {
+@Dependent
+public class ServisniKartonService {
 
     @Inject
-    private ServisniKartonService kartonService;
+    private EntityManager em;
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/addKarton")
-    public Response addKarton(ServisniKarton karton) {
-        try {
-            kartonService.createKarton(karton);
-        } catch (ServisniKartonException e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
+    @Transactional
+    public ServisniKarton createKarton(ServisniKarton karton) throws ServisniKartonException {
+        if (karton == null) {
+            throw new ServisniKartonException("Karton nije proslijeđen.");
         }
-        return Response.ok().build();
+        if (karton.getOpisKvara() == null || karton.getOpisKvara().isEmpty()) {
+            throw new ServisniKartonException("Opis kvara ne smije biti prazan.");
+        }
+        return em.merge(karton);
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/getAllKartoni")
-    public Response getAllKartoni() {
-        List<ServisniKarton> kartoni = null;
-        try {
-            kartoni = kartonService.getAllKartoni();
-        } catch (ServisniKartonException e) {
-            return Response.status(Response.Status.NO_CONTENT).entity(e.getMessage()).build();
+    public List<ServisniKarton> getAllKartoni() throws ServisniKartonException {
+        List<ServisniKarton> kartoni = em.createNamedQuery(ServisniKarton.GET_ALL_KARTONI, ServisniKarton.class).getResultList();
+        if (kartoni.isEmpty()) {
+            throw new ServisniKartonException("Nema servisnih kartona u bazi.");
         }
-        return Response.ok().entity(kartoni).build();
+        return kartoni;
     }
 }
