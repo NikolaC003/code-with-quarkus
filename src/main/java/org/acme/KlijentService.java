@@ -17,7 +17,8 @@ public class KlijentService {
         if (klijent == null) {
             throw new KlijentException("Klijent nije proslijeđen.");
         }
-        if (klijent.getIme().isEmpty() || klijent.getPrezime().isEmpty()) {
+        if (klijent.getIme() == null || klijent.getPrezime() == null
+                || klijent.getIme().isBlank() || klijent.getPrezime().isBlank()) {
             throw new KlijentException("Podaci o klijentu su nepotpuni.");
         }
         return em.merge(klijent);

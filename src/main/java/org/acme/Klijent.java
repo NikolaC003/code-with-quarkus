@@ -6,9 +6,13 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(name = Klijent.GET_ALL_KLIJENTI, query = "Select k.id, k.ime, k.prezime from Klijent k")
+@NamedQuery(name = Klijent.GET_ALL_KLIJENTI, query = "Select k from Klijent k")
 @NamedQuery(name = Klijent.GET_KLIJENT_BY_NAME, query = "Select k from Klijent k where k.ime = :imeK")
 public class Klijent {
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "klijent_id") // Kreira strani ključ u tabeli TimezoneResponse
+    public List<TimezoneResponse> vremenskeZone = new ArrayList<>();
 
     public static final String GET_ALL_KLIJENTI = "GetAllKlijenti";
     public static final String GET_KLIJENT_BY_NAME = "GetKlijentByName";

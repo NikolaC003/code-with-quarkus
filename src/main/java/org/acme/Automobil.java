@@ -6,7 +6,7 @@ import java.util.Objects;
 @Entity
 @NamedQueries({
     @NamedQuery(name = Automobil.GET_ALL_AUTOMOBILI, query = "Select a.id, a.registracija, a.brojSasije from Automobil a"),
-    @NamedQuery(name = Automobil.GET_AUTOMOBILI_BY_KLIJENT_ID, query = "Select a from Automobil a where a.klijentId = :id")
+    @NamedQuery(name = Automobil.GET_AUTOMOBILI_BY_KLIJENT_ID, query = "Select a from Automobil a where a.klijentId = :idKlijenta")
 })
 public class Automobil {
 
