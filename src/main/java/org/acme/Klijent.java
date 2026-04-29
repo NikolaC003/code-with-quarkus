@@ -11,8 +11,12 @@ import java.util.Objects;
 public class Klijent {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "klijent_id") // Kreira strani ključ u tabeli TimezoneResponse
+    @JoinColumn(name = "klijent_id")
     public List<TimezoneResponse> vremenskeZone = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "klijent_id")
+    public List<CurrencyResponse> valute = new ArrayList<>();
 
     public static final String GET_ALL_KLIJENTI = "GetAllKlijenti";
     public static final String GET_KLIJENT_BY_NAME = "GetKlijentByName";
