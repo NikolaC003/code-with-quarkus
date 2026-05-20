@@ -18,6 +18,14 @@ public class Klijent {
     @JoinColumn(name = "klijent_id")
     public List<CurrencyResponse> valute = new ArrayList<>();
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "klijent_uploaded_file",
+            joinColumns = @JoinColumn(name = "klijent_id"),
+            inverseJoinColumns = @JoinColumn(name = "uploaded_file_id")
+    )
+    private List<UploadedFile> uploadedFiles = new ArrayList<>();
+
     public static final String GET_ALL_KLIJENTI = "GetAllKlijenti";
     public static final String GET_KLIJENT_BY_NAME = "GetKlijentByName";
 
@@ -73,6 +81,14 @@ public class Klijent {
 
     public void setAutomobili(List<Automobil> automobili) {
         this.automobili = automobili;
+    }
+
+    public List<UploadedFile> getUploadedFiles() {
+        return uploadedFiles;
+    }
+
+    public void setUploadedFiles(List<UploadedFile> uploadedFiles) {
+        this.uploadedFiles = uploadedFiles;
     }
 
     @Override

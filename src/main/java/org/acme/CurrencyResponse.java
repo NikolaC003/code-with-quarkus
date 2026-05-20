@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "currency")
@@ -26,6 +27,9 @@ public class CurrencyResponse {
     private double rate;
     private double value;
     private double convertedValue;
+
+    @Transient
+    private Map<String, Double> rates;
 
     public CurrencyResponse() {
     }
